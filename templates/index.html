@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Attendance Manager</title>
+  <link href="/static/style.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center p-6">
+  <main class="bg-white shadow-lg rounded-lg max-w-lg w-full p-6 space-y-6">
+    <h1 class="text-3xl font-semibold text-center text-blue-700">📘 Attendance Manager</h1>
+
+    <div class="flex flex-col space-y-4">
+      <input
+        type="text"
+        id="subject"
+        placeholder="Subject Name"
+        class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="number"
+        id="attended"
+        min="0"
+        placeholder="Classes Attended"
+        class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <input
+        type="number"
+        id="total"
+        min="1"
+        placeholder="Total Classes Held"
+        class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button
+        onclick="submitAttendance()"
+        class="bg-blue-600 hover:bg-blue-700 text-white rounded-md py-2 font-semibold transition"
+      >
+        ➕ Submit
+      </button>
+    </div>
+
+    <button
+      onclick="fetchSummary()"
+      class="w-full bg-blue-100 hover:bg-blue-200 text-blue-800 rounded-md py-2 font-semibold transition"
+    >
+      📊 Show Summary
+    </button>
+
+    <section id="summary" class="mt-6 space-y-4"></section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
